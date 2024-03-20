@@ -47,3 +47,5 @@ esrc/main/java/com/pragma/bootcamp2024/adapters/driven/jpa/mysql/repository/ITec
 Ksrc/main/java/com/pragma/bootcamp2024/Arquetipobootcamp2024Application.java,4\2\42fd8dc1271c17b0e29bc57a23cacfd817e0c37c
 r
 Bsrc/main/java/com/pragma/bootcamp2024/bootcamp2024Application.java,6\6\66945c7873091ef8e8c67694c0e72a86598b11dc
+“
+csrc/main/java/com/pragma/bootcamp2024/adapters/driven/jpa/mysql/exception/NoDataFoundException.java,0\e\0e5f15a71fa2ed7a3cc7a78813afba61c0e2d1f4
