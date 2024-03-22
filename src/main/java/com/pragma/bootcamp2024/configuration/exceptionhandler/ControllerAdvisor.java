@@ -1,7 +1,8 @@
 package com.pragma.bootcamp2024.configuration.exceptionhandler;
 
+import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.Capacity.CapacityAlreadyExistsException;
 import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.ElementNotFoundException;
-import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.TechnologyAlreadyExistsException;
+import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.Technology.TechnologyAlreadyExistsException;
 import com.pragma.bootcamp2024.configuration.Constants;
 import com.pragma.bootcamp2024.domain.exception.EmptyFieldException;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +32,10 @@ public class ControllerAdvisor {
     @ExceptionHandler(ElementNotFoundException.class)
     public ResponseEntity<ExceptionResponse> handleElementNotFoundException() {
         return ResponseEntity.badRequest().body(new ExceptionResponse(Constants.ELEMENT_NOT_FOUND_EXCEPTION_MESSAGE, HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
+    }
+
+    @ExceptionHandler(CapacityAlreadyExistsException.class)
+    public ResponseEntity<ExceptionResponse> handleCapacityAlreadyExistsException() {
+        return ResponseEntity.badRequest().body(new ExceptionResponse(Constants.CAPACITY_ALREADY_EXISTS_EXCEPTION_MESSAGE, HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
     }
 }

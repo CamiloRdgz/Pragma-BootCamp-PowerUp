@@ -10,5 +10,5 @@ public interface ITechnologyPersistencePort {
 
     Technology getTechnology(String name);
 
-    List<Technology> getAllTechnologies(int page, int size);
+    List<Technology> getAllTechnologies(Integer page, Integer size);
 }

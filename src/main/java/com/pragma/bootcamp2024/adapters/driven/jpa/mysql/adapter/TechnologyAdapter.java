@@ -3,7 +3,7 @@ package com.pragma.bootcamp2024.adapters.driven.jpa.mysql.adapter;
 import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.entity.TechnologyEntity;
 import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.ElementNotFoundException;
 import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.NoDataFoundException;
-import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.TechnologyAlreadyExistsException;
+import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.exception.Technology.TechnologyAlreadyExistsException;
 import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.mapper.ITechnologyEntityMapper;
 import com.pragma.bootcamp2024.adapters.driven.jpa.mysql.repository.ITechnologyRepository;
 import com.pragma.bootcamp2024.domain.model.Technology;
@@ -34,7 +34,7 @@ public class TechnologyAdapter implements ITechnologyPersistencePort {
     }
 
     @Override
-    public List<Technology> getAllTechnologies(int page, int size) {
+    public List<Technology> getAllTechnologies(Integer page, Integer size) {
         Pageable pagination = PageRequest.of(page, size);
         List<TechnologyEntity> technologies = technologyRepository.findAll(pagination).getContent();
         if (technologies.isEmpty()) {

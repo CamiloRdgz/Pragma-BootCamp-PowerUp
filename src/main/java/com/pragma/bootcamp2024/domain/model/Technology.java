@@ -3,6 +3,8 @@ package com.pragma.bootcamp2024.domain.model;
 import com.pragma.bootcamp2024.domain.exception.EmptyFieldException;
 import com.pragma.bootcamp2024.domain.util.DomainConstants;
 
+import static com.pragma.bootcamp2024.domain.util.DomainConstants.MAX_DESCRIPTION_LENGTH;
+import static com.pragma.bootcamp2024.domain.util.DomainConstants.MAX_NAME_LENGTH;
 import static java.util.Objects.requireNonNull;
 
 public class Technology {
@@ -10,8 +12,7 @@ public class Technology {
     private String name;
     private String description;
 
-    private static final int MAX_NAME_LENGTH = 50;
-    private static final int MAX_DESCRIPTION_LENGTH = 90;
+
 
     public Technology(Long id, String name, String description) {
         if (name.trim().isEmpty()) {
